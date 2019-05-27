@@ -20,24 +20,18 @@ public class Main {
         }
 
         Map.Entry<Integer, ValuesPair> maxEntry = null;
-        int index = 0;
-        int counter = 0;
 
         for (Map.Entry<Integer, ValuesPair> entry : results.entrySet()) {
             if (maxEntry == null || entry.getValue().getY().compareTo(maxEntry.getValue().getY()) > 0) {
                 maxEntry = entry;
-                index = counter;
             }
-            counter++;
         }
 
         System.out.println("xo=" + maxEntry.getValue().getX());
         System.out.println("yo=" + maxEntry.getValue().getY());
-        System.out.println("population number=" + index);
+        System.out.println("population number=" + maxEntry.getKey());
 
-        results.values().forEach(valuesPair -> System.out.println(valuesPair.getX()));
-        System.out.println();
-        results.values().forEach(valuesPair -> System.out.println(valuesPair.getY()));
+        //results.values().forEach(valuesPair -> System.out.println(valuesPair.getY()));
     }
 
 }
